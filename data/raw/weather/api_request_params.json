@@ -1,0 +1,17 @@
+{
+  "api_endpoint": "https://power.larc.nasa.gov/api/temporal/hourly/point",
+  "query_parameters": {
+    "parameters": "T2M",
+    "community": "RE",
+    "longitude": 77.5946,
+    "latitude": 12.9716,
+    "start": "20180501",
+    "end": "20180530",
+    "format": "JSON"
+  },
+  "location_name": "Bengaluru, India",
+  "parameter_description": "T2M: Near-surface air temperature at 2 meters above ground level",
+  "parameter_units": "degrees Celsius (\u00b0C)",
+  "temporal_resolution": "hourly",
+  "saved_raw_file": "C:\\Users\\aksha\\Desktop\\College\\ML Final Project\\Data_Center_Cooling_Controller\\data\\raw\\weather\\nasa_power_hourly_T2M_20180501_20180530.json"
+}
