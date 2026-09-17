@@ -66,8 +66,8 @@ class LiveSimulator:
         # Get last observation from history
         last_obs = self.history[-1]["observation"]
         
-        # Discretize state
-        state_id = self.discretizer.discretize(last_obs)
+        # Discretize and encode state
+        state_id = self.discretizer.encode(last_obs)
         
         # Choose greedy action
         action = self.agent.choose_action(state_id, training=False)

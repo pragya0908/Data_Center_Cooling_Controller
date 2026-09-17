@@ -43,8 +43,8 @@ def plot_simulation_metrics(df: pd.DataFrame) -> go.Figure:
     )
     
     # Safety thresholds
-    t_min = DEFAULT_THERMAL_PARAMS.min_safe_temperature
-    t_max = DEFAULT_THERMAL_PARAMS.max_safe_temperature
+    t_min = DEFAULT_THERMAL_PARAMS.ashrae_recommended_min
+    t_max = DEFAULT_THERMAL_PARAMS.ashrae_recommended_max
     
     fig.add_hline(y=t_min, line_dash="dash", line_color="blue", annotation_text="Min Safe (18°C)", row=1, col=1)
     fig.add_hline(y=t_max, line_dash="dash", line_color="purple", annotation_text="Max Safe (27°C)", row=1, col=1)
@@ -90,7 +90,7 @@ def plot_comparison_metrics(df: pd.DataFrame, scenario_name: str) -> go.Figure:
         subplot_titles=(f"Internal Temperature - {scenario_name}", "Cooling Energy")
     )
     
-    colors = {"fixed": "gray", "rule_based": "blue", "q_learning": "red"}
+    colors = {"fixed_cooling_0.50": "gray", "rule_based": "blue", "q_learning": "red"}
     
     for controller in df["controller"].unique():
         ctrl_df = df[df["controller"] == controller]
@@ -116,8 +116,8 @@ def plot_comparison_metrics(df: pd.DataFrame, scenario_name: str) -> go.Figure:
             row=2, col=1
         )
         
-    t_min = DEFAULT_THERMAL_PARAMS.min_safe_temperature
-    t_max = DEFAULT_THERMAL_PARAMS.max_safe_temperature
+    t_min = DEFAULT_THERMAL_PARAMS.ashrae_recommended_min
+    t_max = DEFAULT_THERMAL_PARAMS.ashrae_recommended_max
     fig.add_hline(y=t_min, line_dash="dash", line_color="blue", row=1, col=1)
     fig.add_hline(y=t_max, line_dash="dash", line_color="purple", row=1, col=1)
 
